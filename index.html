@@ -3,158 +3,249 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="AW_h4JAkHSKoozz6NXtYIVgB_UuO6vYGhIJvkbVHiCY" />
-<meta name="description" content="Zhipeng Duan's academic homepage, research in  homotopy theory">
-<meta name="keywords" content="equivariant homotopy theory, chromatic homotopy theory, Zhipeng Duan, math">
-
-  <title>Zhipeng Duan's homepage</title>
+  <meta name="google-site-verification" content="AW_h4JAkHSKoozz6NXtYIVgB_UuO6vYGhIJvkbVHiCY" />
+  <meta name="description" content="Zhipeng Duan's academic homepage: research in homotopy theory and combinatorial topology, publications, and teaching.">
+  <meta name="keywords" content="equivariant homotopy theory, chromatic homotopy theory, Zhipeng Duan, math">
+  <title>Zhipeng Duan | Mathematics</title>
   <style>
+    :root {
+      color-scheme: light;
+      --paper: #fdfcf9;
+      --ink: #252c30;
+      --muted: #53616a;
+      --accent: #205d70;
+      --rule: #d5dcd9;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-padding-top: 1.5rem; }
     body {
-      font-family: "Georgia", serif;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.6;
-      color: #111;
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-text-size-adjust: 100%;
+      overflow-wrap: anywhere;
     }
-    h1 {
-      font-size: 1.8em;
-      margin-bottom: 0.2em;
+    .page { width: min(100%, 1200px); margin-inline: auto; padding: 0 32px 48px; }
+    a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 1px; }
+    .skip-link { position: absolute; top: 8px; left: 8px; transform: translateY(-160%); padding: 8px 12px; background: var(--paper); z-index: 1; }
+    .skip-link:focus { transform: translateY(0); }
+    .site-header { padding-block: 20px 15px; border-bottom: 1px solid var(--rule); }
+    .navigation { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 4px 24px; font: 15px/1.5 var(--sans); }
+    .navigation a { display: inline-block; padding-block: 8px; text-decoration: none; }
+    .navigation a:hover { text-decoration: underline; }
+    .home-link { color: var(--ink); font-weight: 600; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 4px 24px; }
+    .introduction { display: grid; grid-template-columns: minmax(0, 1fr) 340px; align-items: center; gap: 48px; padding-block: 32px 30px; }
+    h1, h2, h3, h4, p { margin: 0; }
+    h1 { font-size: 36px; line-height: 1.2; font-weight: 400; letter-spacing: -0.025em; }
+    .affiliation { margin-top: 10px; line-height: 1.55; }
+    .background { margin-top: 14px; }
+    .portrait { display: block; width: 100%; max-width: 100%; height: auto; border-radius: 2px; }
+    .contact { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 22px; margin-top: 16px; font: 15px/1.65 var(--sans); }
+    .cv-date { color: var(--muted); }
+    .major-section { border-top: 1px solid var(--rule); padding-top: 23px; margin-top: 28px; }
+    #research { margin-top: 0; }
+    h2 { font-size: 27px; line-height: 1.3; font-weight: 400; letter-spacing: -0.015em; }
+    .research-interests { margin-top: 13px; max-width: 78ch; }
+    h3 { margin-top: 24px; color: var(--muted); font: 600 15px/1.5 var(--sans); }
+    .paper-list { list-style: none; padding: 0; margin: 13px 0 0; }
+    .paper-list > li + li { margin-top: 23px; }
+    .paper-title { font-size: 19px; line-height: 1.45; font-weight: 600; }
+    .paper-title a { color: var(--ink); text-decoration: none; }
+    .paper-title a:hover { color: var(--accent); text-decoration: underline; }
+    .collaborators { margin-top: 4px; color: var(--muted); font-size: 16px; line-height: 1.55; }
+    .collaborators a { color: inherit; text-decoration-color: #a3afb3; }
+    .collaborators a:hover { color: var(--accent); }
+    .citation { margin-top: 4px; font-size: 16px; line-height: 1.55; }
+    .resources { margin-top: 5px; font: 14px/1.6 var(--sans); }
+    .funding-record { display: grid; grid-template-columns: 172px minmax(0, 1fr); gap: 10px 24px; margin-top: 14px; }
+    .date { color: var(--muted); font: 15px/1.6 var(--sans); }
+    .grant-number { white-space: nowrap; }
+    .teaching-list { list-style: none; padding: 0; margin: 13px 0 0; }
+    .teaching-list li { display: grid; grid-template-columns: 172px minmax(0, 1fr); gap: 4px 24px; font-size: 16px; line-height: 1.55; }
+    .teaching-list li + li { margin-top: 15px; }
+    .term { display: block; }
+    .institution { display: block; color: var(--muted); }
+    @media screen and (max-width: 1100px) {
+      .introduction { grid-template-columns: minmax(0, 1fr) 280px; column-gap: 32px; }
     }
-    h2 {
-      margin-top: 1.5em;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 0.2em;
+    @media screen and (max-width: 860px) {
+      .introduction { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+      .portrait { width: 240px; }
     }
-    h3 {
-      margin-top: 1em;
-      font-size: 1em; /* Reduced font size for "Current" and "Previous" titles */
-      color: #333;
-      text-decoration: underline;
+    @media (max-width: 600px) {
+      .page { padding: 0 22px 32px; }
+      .site-header { padding-top: 12px; padding-bottom: 10px; }
+      .navigation { gap: 0 20px; }
+      .nav-links { gap: 4px 20px; }
+      .introduction { padding-block: 26px; }
+      h1 { font-size: 32px; }
+      .contact { gap: 6px 20px; }
+      .major-section { margin-top: 24px; padding-top: 20px; }
+      .funding-record, .teaching-list li { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+      .term { display: inline; }
+      .teaching-list li + li { margin-top: 18px; }
     }
-    img {
-      float: right;
-      width: 180px;
-      border-radius: 4px;
-      margin-left: 20px;
+    @media print {
+      :root { --paper: #fff; --ink: #000; --muted: #333; --accent: #000; --rule: #aaa; }
+      @page { margin: 16mm; }
+      body { font-size: 10.5pt; line-height: 1.45; }
+      .page { width: 100%; padding: 0; }
+      .site-header, .skip-link { display: none; }
+      .introduction { grid-template-columns: minmax(0, 1fr) 100px; align-items: start; padding: 0 0 16px; gap: 24px; }
+      .portrait { width: 100px; }
+      h1 { font-size: 24pt; }
+      h2 { font-size: 17pt; }
+      h3 { margin-top: 14px; font-size: 10pt; }
+      .paper-title { font-size: 12pt; }
+      .collaborators, .citation, .teaching-list li { font-size: 10.5pt; }
+      .contact, .date, .resources { font-size: 9pt; }
+      .major-section { margin-top: 18px; padding-top: 14px; }
+      .paper-list > li + li { margin-top: 14px; }
+      h2, h3, h4 { break-after: avoid; }
+      .paper-list > li, .teaching-list li, .funding-record { break-inside: avoid; }
+      .funding-record, .teaching-list li { grid-template-columns: 130px minmax(0, 1fr); }
+      .term { display: block; }
+      a { text-decoration: none; }
     }
-    hr {
-      margin: 2em 0;
-    }
-    a {
-      color: #0044cc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    ul {
-      margin-top: 0.5em;
-    }
-    .section {
-      margin-top: 2em;
-    }
-
-    .highlight-name {
-  font-weight: bold;
-  color: #007bff; /* Blue color */
-}
-
   </style>
 </head>
-<body>
-  <h1>Zhipeng Duan</h1>
-  <img src="photo.jpeg" alt="Zhipeng Duan">
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+    <header class="site-header">
+      <nav class="navigation" aria-label="Main navigation">
+        <a class="home-link" href="#top">Zhipeng Duan</a>
+        <div class="nav-links">
+          <a href="#research">Research</a>
+          <a href="#teaching">Teaching</a>
+          <a href="Zhipeng's CV.pdf">CV</a>
+        </div>
+      </nav>
+    </header>
 
-  <p>
-    I am an associate professor in the School of Mathematical Sciences at Nanjing Normal University.
-    I obtained my Ph.D. in mathematics from the University of Copenhagen in 2020 under the supervision of 
-    <a href="https://web.math.ku.dk/~moller/">Jesper Møller</a>.  My <a href="Zhipeng's CV.pdf">Curriculum Vitae</a> is available here (last updated March 2026).
-  </p>
+    <main id="main">
+      <section class="introduction" aria-labelledby="name">
+        <div>
+          <h1 id="name">Zhipeng Duan</h1>
+          <p class="affiliation">Associate Professor<br>School of Mathematical Sciences, Nanjing Normal University</p>
+          <p class="background">I obtained my Ph.D. in mathematics from the University of Copenhagen in 2020 under the supervision of <a href="https://web.math.ku.dk/~moller/">Jesper Møller</a>.</p>
+          <div class="contact">
+            <a href="mailto:zhipeng@njnu.edu.cn">zhipeng@njnu.edu.cn</a>
+            <span><a href="Zhipeng's CV.pdf" aria-label="Curriculum Vitae (PDF)">CV</a> <span class="cv-date">(last updated March 2026)</span></span>
+          </div>
+        </div>
+        <img class="portrait" src="photo.jpeg" alt="Zhipeng Duan">
+      </section>
 
-  <p>
-    My research interests lie in homotopy theory and combinatorial topology, 
-    especially in applying methods from equivariant homotopy theory to problems 
-    in chromatic homotopy theory.
-  </p>
+      <section id="research" class="major-section" aria-labelledby="research-heading">
+        <h2 id="research-heading">Research</h2>
+        <p class="research-interests">My research interests lie in homotopy theory and combinatorial topology, especially in applying methods from equivariant homotopy theory to problems in chromatic homotopy theory.</p>
 
-  <hr>
+        <h3>Preprints</h3>
+        <ul class="paper-list">
+          <li>
+            <article>
+              <h4 class="paper-title"><a href="https://arxiv.org/abs/2512.01161">Periodicity and finite complexity in higher real K-theories</a></h4>
+              <p class="collaborators">Joint work with <a href="https://mikehill.math.umn.edu">Mike Hill</a>, <a href="https://guchuanli.github.io/">Guchuan Li</a>, <a href="https://sites.google.com/view/yutaoliushomepage/home?pli=1">Yutao Liu</a>, <a href="https://sites.google.com/view/dannyshi">XiaoLin Danny Shi</a>, <a href="https://pouiyter.github.io">Guozhen Wang</a> and <a href="https://sites.google.com/view/xuzhouli">Zhouli Xu</a>.</p>
+              <p class="citation">arXiv:2512.01161 [math.AT], 2025.</p>
+              <p class="resources"><a href="https://arxiv.org/abs/2512.01161" aria-label="arXiv:2512.01161">arXiv</a></p>
+            </article>
+          </li>
+        </ul>
 
+        <h3>Publications</h3>
+        <ul class="paper-list">
+          <li>
+            <article>
+              <h4 class="paper-title">Topological data analysis for pore-network extraction in porous media</h4>
+              <p class="collaborators">Joint work with J. Liu, T. Zhang, Y. Zhang, and S. Sun.</p>
+              <p class="citation"><em>Advances in Geo-Energy Research</em> 20(2) (2026), 101–113.</p>
+            </article>
+          </li>
+          <li>
+            <article>
+              <h4 class="paper-title"><a href="https://doi.org/10.2140/gt.2025.29.903">Vanishing Lines in Chromatic Homotopy Theory</a></h4>
+              <p class="collaborators">Joint work with <a href="https://guchuanli.github.io/">Guchuan Li</a> and <a href="https://sites.google.com/view/dannyshi">XiaoLin Danny Shi</a>.</p>
+              <p class="citation"><em>Geometry &amp; Topology</em> 29 (2025), 903–930.</p>
+              <p class="resources"><a href="https://doi.org/10.2140/gt.2025.29.903">DOI: 10.2140/gt.2025.29.903</a></p>
+            </article>
+          </li>
+          <li>
+            <article>
+              <h4 class="paper-title"><a href="https://doi.org/10.1007/s42543-024-00087-7">RO(G)-Graded Homotopy Fixed Point Spectral Sequence for Height 2 Morava E-Theory</a></h4>
+              <p class="collaborators">Joint work with <a href="https://hanajiakong.github.io/">Hana Jia Kong</a>, <a href="https://guchuanli.github.io/">Guchuan Li</a>, <a href="https://sites.google.com/view/yunzelu/home">Yunze Lu</a>, and <a href="https://pouiyter.github.io/">Guozhen Wang</a>.</p>
+              <p class="citation"><em>Peking Mathematical Journal</em> (2024).</p>
+              <p class="resources"><a href="https://doi.org/10.1007/s42543-024-00087-7">DOI: 10.1007/s42543-024-00087-7</a></p>
+            </article>
+          </li>
+          <li>
+            <article>
+              <h4 class="paper-title"><a href="https://doi.org/10.1007/s00026-022-00630-2">Equivariant Euler Characteristics of Subgroup Complexes of Symmetric Groups</a></h4>
+              <p class="citation"><em>Annals of Combinatorics</em> 27, 67–85 (2023).</p>
+              <p class="resources"><a href="https://doi.org/10.1007/s00026-022-00630-2">DOI: 10.1007/s00026-022-00630-2</a></p>
+            </article>
+          </li>
+        </ul>
+      </section>
 
-    <div class="section">
-    <h2>Contact</h2>
-    <div class="contact-info">
-      <p>Email: <a href="mailto:zhipeng@njnu.edu.cn">zhipeng@njnu.edu.cn</a></p>
-      <p>School of Mathematical Sciences<br>
-      Nanjing Normal University</p>
-    </div>
+      <section id="funding" class="major-section" aria-labelledby="funding-heading">
+        <h2 id="funding-heading">Funding</h2>
+        <div class="funding-record">
+          <p class="date">2025.01–2027.12</p>
+          <p>National Natural Science Foundation of China <span class="grant-number">(No. 12401084)</span></p>
+        </div>
+      </section>
+
+      <section id="teaching" class="major-section" aria-labelledby="teaching-heading">
+        <h2 id="teaching-heading">Teaching</h2>
+        <h3>Current</h3>
+        <ul class="teaching-list">
+          <li>
+            <p class="date">2026–2027 <span class="term">(Autumn Semester)</span></p>
+            <p>Lecturer in <em>Linear Algebra and Differential Geometry</em>.<span class="institution">Nanjing Normal University.</span></p>
+          </li>
+        </ul>
+        <h3>Previous</h3>
+        <ul class="teaching-list">
+          <li>
+            <p class="date">2025–2026 <span class="term">(Spring Semester)</span></p>
+            <p>Lecturer in <em>Probability and Statistics and Modern Algebra (joint with Prof. Haiyan Zhou)</em>.<span class="institution">Nanjing Normal University.</span></p>
+          </li>
+          <li>
+            <p class="date">2025–2026 <span class="term">(Autumn Semester)</span></p>
+            <p>Lecturer in <em>Differential Geometry and Linear Algebra</em>.<span class="institution">Nanjing Normal University.</span></p>
+          </li>
+          <li>
+            <p class="date">2024–2025</p>
+            <p>Lecturer in <em>Advanced Mathematics</em> (6 credits).<span class="institution">Nanjing Normal University.</span></p>
+          </li>
+          <li>
+            <p class="date">2023–2024</p>
+            <p>Lecturer in <em>Advanced Mathematics</em> (6 credits).<span class="institution">Nanjing Normal University.</span></p>
+          </li>
+          <li>
+            <p class="date">2021–2022 <span class="term">(Spring Semester)</span></p>
+            <p>Lecturer in <em>Advanced Mathematics</em> (4 credits).<span class="institution">Nanjing Normal University.</span></p>
+          </li>
+          <li>
+            <p class="date">2018–2019 <span class="term">(Block 1)</span></p>
+            <p>Teaching Assistant in <em>Advanced Linear Algebra</em>.<span class="institution">University of Copenhagen.</span></p>
+          </li>
+          <li>
+            <p class="date">2017–2018 <span class="term">(Block 1)</span></p>
+            <p>Teaching Assistant in <em>Advanced Linear Algebra</em>.<span class="institution">University of Copenhagen.</span></p>
+          </li>
+        </ul>
+      </section>
+    </main>
   </div>
-
-  <div class="section">
-    <h2>Research</h2>
-    <ul>
-   
-     <li>
- <em>Equivariant Euler Characteristics of Subgroup Complexes of Symmetric Groups</em>.
-  <strong>Annals of Combinatorics</strong> 27, 67–85 (2023). 
-  <a href="https://doi.org/10.1007/s00026-022-00630-2">DOI: 10.1007/s00026-022-00630-2</a>.
-</li>
-<li>
-
-  <em>RO(G)-Graded Homotopy Fixed Point Spectral Sequence for Height 2 Morava E-Theory</em>, joint work with <a href="https://hanajiakong.github.io/" target="_blank"> Hana  Jia  Kong</a>, <a href="https://guchuanli.github.io/" target="_blank">Guchuan Li</a>, <a href="https://sites.google.com/view/yunzelu/home" target="_blank"> Yunze Lu</a>, and <a href="https://pouiyter.github.io/" target="_blank">Guozhen Wang</a>.
-  <strong>Peking Mathematical Journal</strong> (2024). 
-  <a href="https://doi.org/10.1007/s42543-024-00087-7">DOI: 10.1007/s42543-024-00087-7</a>.
-</li>
-<li>
-   <em>Vanishing Lines in Chromatic Homotopy Theory</em>, joint work with <a href="https://guchuanli.github.io/" target="_blank">Guchuan Li</a> and <a href="https://sites.google.com/view/dannyshi" target="_blank">XiaoLin Danny Shi</a>. 
-  <strong>Geometry &amp; Topology</strong> 29 (2025), 903–930. 
-  <a href="https://doi.org/10.2140/gt.2025.29.903">DOI: 10.2140/gt.2025.29.903</a>.
-</li>
-        <li>
-  <em>Topological data analysis for pore-network extraction in porous media</em>, joint work with J. Liu, T. Zhang, Y. Zhang, and S. Sun. 
-  <strong>Advances in Geo-Energy Research</strong> 20(2) (2026), 101–113.
-</li>
-<li>
-  <em>Periodicity and finite complexity in higher real K-theories</em>, 
-  joint work with 
-  <a href="https://mikehill.math.umn.edu">Mike Hill</a>, 
-  <a href="https://guchuanli.github.io/" target="_blank">Guchuan Li</a>, 
-  <a href="https://sites.google.com/view/yutaoliushomepage/home?pli=1">Yutao Liu</a>,  
-  <a href="https://sites.google.com/view/dannyshi" target="_blank">XiaoLin Danny Shi</a>, 
-  <a href="https://pouiyter.github.io">Guozhen Wang</a> and 
-  <a href="https://sites.google.com/view/xuzhouli">Zhouli Xu</a>.  
-  arXiv:2512.01161 [math.AT], 2025.  
-  <a href="https://arxiv.org/abs/2512.01161">https://arxiv.org/abs/2512.01161</a>.
-</li>
-    </ul>
-  </div>
-  
-  <div class="section">
-  <h2>Funding</h2>
-  <ul>
-    <li><strong>2025.01–2027.12</strong>: National Natural Science Foundation of China (No. 12401084)</li>
-  </ul>
-</div>
-
-
-<div  class="section">
-  <h2>Teaching</h2>
-
-  <h3>Current</h3>
-  <ul>
-    <li><strong>2025–2026 (Spring Semester)</strong>: Lecturer in <em>Probability and Statistics  and Modern Algebra (joint with Prof. Haiyan Zhou)</em>, Nanjing Normal University.</li>
-  </ul>
-
-  <h3>Previous</h3>
-  <ul>
-     <li><strong>2025–2026 (Autumn Semester)</strong>: Lecturer in <em>Differential Geometry and Linear Algebra</em>, Nanjing Normal University.</li>
-    <li><strong>2024–2025</strong>: Lecturer in <em>Advanced Mathematics</em> (6 credits), Nanjing Normal University.</li>
-    <li><strong>2023–2024</strong>: Lecturer in <em>Advanced Mathematics</em> (6 credits), Nanjing Normal University.</li>
-    <li><strong>2021–2022 (Spring Semester)</strong>: Lecturer in <em>Advanced Mathematics</em> (4 credits), Nanjing Normal University.</li>
-    <li><strong>2018–2019 (Block 1)</strong>: Teaching Assistant in <em>Advanced Linear Algebra</em>, University of Copenhagen.</li>
-    <li><strong>2017–2018 (Block 1)</strong>: Teaching Assistant in <em>Advanced Linear Algebra</em>, University of Copenhagen.</li>
-  </ul>
-</div>
-
 </body>
 </html>
